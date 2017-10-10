@@ -41,6 +41,27 @@ TODOを埋め、spec.homepageにはgithub urlを入れる。
 
 このファイルで重要なのは依存するgemの設定。`add_dependency`と`add_development_dependency`を使って必要なgemを追加する。Gemfile自信はこのファイルを参照しているので変更する必要はない。
 
+## Gemの実行方法
+```rb
+require 'test_gem/version'
+module TestGem
+  def self.greet
+    'Hello World!'
+  end
+end
+```
+
+```
+# gem のインストール
+bundle install
+# rubyの対話型インタプリタを起動
+bundle exec irb                                                                              [2.1.4]
+irb(main):001:0> require 'test_gem'
+=> true
+irb(main):002:0> TestGem.greet
+Hello World!
+```
+
 ## ビルドやリリース
 ビルドやリリースはすべてrakeタスクが用意されている。`rake -T`で確認できる。
 
