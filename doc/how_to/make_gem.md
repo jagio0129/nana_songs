@@ -62,6 +62,12 @@ irb(main):002:0> TestGem.greet
 Hello World!
 ```
 
+irbでなくpryが使いたいときはgemspecファイルに
+```rb
+spec.add_development_dependency "rspec"
+```
+を追加して`bundle exec pry`としてやればよい。
+
 ## ビルドやリリース
 ビルドやリリースはすべてrakeタスクが用意されている。`rake -T`で確認できる。
 
